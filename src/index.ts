@@ -10,21 +10,23 @@ client.on('ready', (c) => {
     console.log(`${c.user.username} is online.`);
 });
 
-client.on('message', (message) =>{
-    if(message.content.includes === 'ping'){
+client.on('message', (message) => {
+    if(message.content.includes('ping')){
         message.delete();
     }
 })
 
 client.on('messageCreate', async (message) => {
     if (message.content.startsWith('!character')) {
-        try{
-            // const character = await getCharacterByName(message);
-            console.log(message.author.username);
-            (await message.reply(await getCharacterByName(message).then((char) => char.world))).react('👍');
-        }catch(e){
-            message.reply('Character not found');
-        }
+        console.log(message.author.username);
+
+        await getCharacterByName(message)
+            .then(async (character) => {
+                await message.reply(character.world).then((message) => message.react('👍'));
+            })
+            .catch((err) => {
+                message.reply('Character not found.');
+            })
     }
 });
 
