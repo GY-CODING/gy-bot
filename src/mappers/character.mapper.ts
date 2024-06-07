@@ -1,6 +1,7 @@
 import { Character } from "../domain/character";
+import { storyFromDTO } from "../mappers/story.mapper"
 
-export const charactersFromDto = (obj: any): Character => {
+export const charactersFromDTO = (obj: any): Character => {
   const character: Character = {
     identifier: obj.identifier,
     name: obj.name,
@@ -22,11 +23,12 @@ export const charactersFromDto = (obj: any): Character => {
       abilityName: obj.ability.abilityName,
       abilityDesc: obj.ability.abilityDesc,
     },
-    stories: obj.stories.map((story: any) => ({
-      identifier: story.identifier,
-      title: story.title,
-      text: story.text,
-    })),
+    stories: obj.stories.map((story: any) => storyFromDTO(story)),
+
+    toString: () => {
+      return `${character.name}, también conocido como "${character.title}", es un ${character.race} que vive en el mundo de ${character.world}.\n\n${character.description}`;
+    },
   };
+
   return character;
 };

@@ -1,3 +1,5 @@
+import { Story } from "../domain/story";
+
 export interface Character {
     identifier: string;
     name: string;
@@ -19,10 +21,8 @@ export interface Character {
       abilityName: string;
       abilityDesc: string;
     };
-    stories: Array<{
-      identifier: string;
-      title: string;
-      text: string;
-    }>;
-  }
+    stories: Array<Story>;
+
+    toString(): string;
+}
   
