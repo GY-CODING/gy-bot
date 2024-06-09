@@ -1,7 +1,6 @@
-const { ButtonBuilder, ButtonStyle, SlashCommandBuilder } = require('discord.js');
 import 'dotenv/config';
 import { Client } from 'discord.js';
-import { getCharacterByName, getCharacterStoriesByName } from './data/characters-fetch';
+import { getCharacterByName } from './data/characters-fetch';
 import { getWorldByName } from './data/worlds-fetch';
 
 const PREFIX: string = '++';
