@@ -9,3 +9,12 @@ export async function getCharacterByName(identifier: Message): Promise<Character
     
     return charactersFromDTO(data);
 }
+
+export async function listCharacters(): Promise<Character[]> {
+    const response          = await fetch(`https://fallofthegods-data-gycoding.koyeb.app/characters/game/page?page=0&size=58`);
+    const data              = await response.json();
+    
+    console.log(data);
+    
+    return data.map((character: Character) => charactersFromDTO(character));
+}

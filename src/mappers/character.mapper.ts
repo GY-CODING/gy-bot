@@ -29,6 +29,6 @@ export const charactersFromDTO = (obj: any): Character => {
       return `${character.name}, también conocido como "${character.title}", es un ${character.race} que vive en el mundo de ${character.world}.\n\n${character.description}`;
     },
   };
-
+  
   return character;
 };
