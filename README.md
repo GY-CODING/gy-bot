@@ -4,9 +4,11 @@
 [![developer](https://img.shields.io/badge/developed-GYCODING-B833FF?style=for-the-badge)](https://gycoding.com)
 [![website](https://img.shields.io/badge/discord-none_yet-lightgrey?style=for-the-badge)](#)
 
+<br>
+
 ## Introduction
 
-This is the official GYCODING's Discord BOT with access to almost every GYCODING product.
+This is the official **GYCODING**'s Discord BOT with access to almost every **GYCODING** product.
 
 <br>
 
